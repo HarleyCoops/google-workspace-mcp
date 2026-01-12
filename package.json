@@ -1,14 +1,40 @@
 {
-  "name": "google-workspace-mcp",
+  "name": "@harleycoops/google-workspace-mcp",
   "version": "1.0.0",
   "description": "MCP server for Google Sheets and Docs integration",
   "type": "module",
   "main": "build/index.js",
+  "bin": {
+    "google-workspace-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarleyCoops/google-workspace-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "google",
+    "sheets",
+    "docs",
+    "workspace",
+    "model-context-protocol"
+  ],
+  "author": "HarleyCoops",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HarleyCoops/google-workspace-mcp/issues"
+  },
+  "homepage": "https://github.com/HarleyCoops/google-workspace-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.5.0",
     "googleapis": "^140.0.0"

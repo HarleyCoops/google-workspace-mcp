@@ -11,11 +11,8 @@ import { google, Auth } from 'googleapis';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Default Daily repo path
-const DAILY_REPO_PATH = process.env.DAILY_REPO_PATH || 'C:\\Users\\chris\\Daily';
-
-// Load .env file if present (from Daily repo root)
-const envPath = process.env.DOTENV_PATH || path.join(DAILY_REPO_PATH, '.env');
+// Load .env file if present (from current working directory)
+const envPath = process.env.DOTENV_PATH || path.join(process.cwd(), '.env');
 if (fs.existsSync(envPath)) {
   const envContent = fs.readFileSync(envPath, 'utf-8');
   for (const line of envContent.split('\n')) {
@@ -30,8 +27,8 @@ if (fs.existsSync(envPath)) {
   }
 }
 
-// Token file path - uses the token from Daily repo
-const TOKEN_PATH = process.env.GOOGLE_TOKEN_PATH || path.join(DAILY_REPO_PATH, 'token.json');
+// Token file path - configure via GOOGLE_TOKEN_PATH env var
+const TOKEN_PATH = process.env.GOOGLE_TOKEN_PATH || path.join(process.cwd(), 'token.json');
 
 interface TokenData {
   token: string;
