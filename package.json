@@ -36,11 +36,11 @@
   },
   "homepage": "https://github.com/HarleyCoops/google-workspace-mcp#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.32.0",
-    "googleapis": "^173.0.0"
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "googleapis": "^186.0.0"
   },
   "devDependencies": {
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.6.5",
     "typescript": "^7.0.2"
   }
 }
